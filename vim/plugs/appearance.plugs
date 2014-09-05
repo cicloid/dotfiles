@@ -1,0 +1,8 @@
+Plug 'chrisbra/Colorizer'
+Plug 'skwp/vim-colors-solarized'
+Plug 'bling/vim-airline'
+Plug 'jby/tmux.vim'
+Plug 'morhetz/gruvbox'
+Plug 'vim-scripts/showmarks'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'effkay/argonaut.vim'

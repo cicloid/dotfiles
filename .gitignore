@@ -7,8 +7,9 @@ vim/.netrwhist
 vim/tmp
 vim/spell
 vim/after/.vimrc.after
-vim/.vundles.local
+vim/.plugs.local
 vim/bundle
+vim/plugged
 vim/sessions
 .netrwhist
 bin/subl
