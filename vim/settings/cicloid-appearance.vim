@@ -7,7 +7,7 @@ execute "set colorcolumn=" . join(range(81,335), ',')
 
 hi ColorColumn guibg=#2d2d2d ctermbg=233
 
-colorscheme argonaut
+colorscheme solarized
 set background=dark
 
 
