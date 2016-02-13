@@ -4,5 +4,7 @@ if executable('ag')
   nmap ,af :AgFile ""<Left>
 
   map <C-F> :Ag ""<Left>
+
+  let g:ag_working_path_mode="r"
 endif
 

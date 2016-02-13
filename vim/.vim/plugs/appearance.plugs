@@ -1,7 +1,7 @@
 Plug 'chrisbra/Colorizer'
 Plug 'skwp/vim-colors-solarized'
 Plug 'bling/vim-airline'
-Plug 'jby/tmux.vim'
+Plug 'keith/tmux.vim'
 Plug 'morhetz/gruvbox'
 Plug 'xsunsmile/showmarks'
 Plug 'christoomey/vim-tmux-navigator'

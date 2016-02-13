@@ -26,3 +26,7 @@ Plug 'vim-scripts/AutoTag'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/sudo.vim'
+Plug 'Shougo/neocomplete'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+
