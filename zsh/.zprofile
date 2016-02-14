@@ -77,17 +77,15 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
+# Ruby RBENV
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 . `brew --prefix`/etc/profile.d/z.sh
+eval "$(direnv hook zsh)"
 
 alias dokku='$HOME/.dokku/contrib/dokku_client.sh'
 
-eval "$(direnv hook zsh)"
-
-export DOKKU_HOST="31415.ninja"
-export HOMEBREW_GITHUB_API_TOKEN="e2313034933cae13ec1293472a99694a51ddd1d2"
 
 # VirtualEnv's
 export WORKON_HOME=$HOME/.virtualenvs
@@ -105,3 +103,6 @@ alias v.cd='cdvirtualenv'
 alias v.lssitepackages='lssitepackages'
 
 
+if [[ -s "~/.zsh.custom" ]]; then
+  . ~/.zsh.custom
+fi
