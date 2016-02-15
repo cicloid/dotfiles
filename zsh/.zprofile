@@ -86,6 +86,10 @@ eval "$(direnv hook zsh)"
 
 alias dokku='$HOME/.dokku/contrib/dokku_client.sh'
 
+if [[ -s "~/.homebrewrc ]]; then
+  . ~/.homebrewrc
+fi
+
 if [[ -s "~/.zsh.custom" ]]; then
   . ~/.zsh.custom
 fi
