@@ -149,6 +149,7 @@ echo " - Google and Twitter Accounts"
 echo " - Disable iCloud in Contacts app preferences"
 echo " - Dropbox setup, Day One and 1Password Sync"
 echo " - Chrome Login, set downloads folder, 1Password add on"
+echo " - Keys, and ENV settings"
 
 echo "TODO: Install"
 echo " - Mac App Store (PDF Expert, Dash, Day One, Fantastical, Pixelmator)"
