@@ -23,6 +23,7 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
   'editor' \
+  'fasd' \
   'history' \
   'history-substring-search' \
   'directory' \
@@ -33,6 +34,7 @@ zstyle ':prezto:load' pmodule \
   'rails' \
   'homebrew' \
   'osx' \
+  'node' \
   'python' \
   'ruby' \
   'rsync' \
