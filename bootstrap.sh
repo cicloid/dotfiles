@@ -81,10 +81,10 @@ popd
 #----------------------------------------------------------------------------------------------------------------
 # ssh
 #----------------------------------------------------------------------------------------------------------------
-file="/Users/cicloid/.ssh/id_rsa"
+file="/Users/$USER/.ssh/id_rsa"
 if ! [ -f "$file" ]; then
 	echo "$file not found."
-	ssh-keygen -t rsa -b 4096 -C "git@cicloid.com"
+	ssh-keygen -t rsa -b 4096 -C "$USER@$HOST"
   ssh-add ~/.ssh/id_rsa
   pbcopy < ~/.ssh/id_rsa.pub
   open https://github.com/settings/ssh
