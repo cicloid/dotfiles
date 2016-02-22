@@ -65,6 +65,11 @@ fi
 
 brew update
 brew install git zsh stow
+echo "Updating shells"
+pbcopy "/usr/loca/bin/zsh"
+sudo vi /etc/shells
+chsh -s "/usr/loca/bin/zsh"
+
 
 #----------------------------------------------------------------------------------------------------------------
 # Dotfiles
@@ -94,10 +99,20 @@ fi
 #----------------------------------------------------------------------------------------------------------------
 # Link Dotfiles
 #----------------------------------------------------------------------------------------------------------------
+pushd $HOME/dotfiles
 git init .
-git remote add -t \* -f origin git@github.com:charlieegan3/dotfiles.git
+git remote add -t \* -f origin git@github.com:cicloid/dotfiles.git
 git fetch origin
 git reset --hard origin/master
+echo "Updating submodules"
+git submodule init
+git submodule update
+echo "Updating zpresto submodules"
+pushd $HOME/dotfiles/zsh/.zprezto
+git submodule init
+git submodule update
+popd
+popd
 
 #----------------------------------------------------------------------------------------------------------------
 # Install missing homebrew stuff
