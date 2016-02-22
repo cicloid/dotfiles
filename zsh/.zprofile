@@ -81,15 +81,20 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-. `brew --prefix`/etc/profile.d/z.sh
-eval "$(direnv hook zsh)"
+if [[ -s `brew --prefix`/etc/profile.d/z.sh ]]; then
+	. `brew --prefix`/etc/profile.d/z.sh
+fi
+
+if which direnv > /dev/null; then
+	eval "$(direnv hook zsh)"
+fi
 
 alias dokku='$HOME/.dokku/contrib/dokku_client.sh'
 
-if [[ -s "~/.homebrewrc" ]]; then
+if [[ -s "$HOME/.homebrewrc" ]]; then
   . ~/.homebrewrc
 fi
 
-if [[ -s "~/.zsh.custom" ]]; then
+if [[ -s "$HOME/.zsh.custom" ]]; then
   . ~/.zsh.custom
 fi

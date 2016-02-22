@@ -18,10 +18,13 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-eval "$(hub alias -s)"
-eval "$(direnv hook zsh)"
+if [[ $+commands["hub"] ]]; then
+  eval "$(hub alias -s)"
+fi
 
-source /Users/cicloid/.iterm2_shell_integration.zsh
+if [[ -s "/Userc/cicloid/.iterm2_shell_integrations.zsh" ]]; then
+  source /Users/cicloid/.iterm2_shell_integration.zsh
+fi
 
 # Added by termtile (https://github.com/apaszke/termtile)
 alias tul='osascript ~/.termtile/tile.scpt up left'
@@ -38,7 +41,12 @@ alias tmax='osascript ~/.termtile/maximize.scpt '
 alias tsn='osascript ~/.termtile/changeScreen.scpt next'
 alias tfs='osascript ~/.termtile/fullscreen.scpt '
 
-LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
-  . $LUNCHY_DIR/lunchy-completion.zsh
+
+if [[ `gem which lunchy &` ]]; then
+  LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+  if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+    . $LUNCHY_DIR/lunchy-completion.zsh
+  fi
 fi
+
+

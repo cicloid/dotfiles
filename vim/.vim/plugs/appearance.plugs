@@ -1,6 +1,7 @@
 Plug 'chrisbra/Colorizer'
 Plug 'skwp/vim-colors-solarized'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'keith/tmux.vim'
 Plug 'morhetz/gruvbox'
 Plug 'xsunsmile/showmarks'

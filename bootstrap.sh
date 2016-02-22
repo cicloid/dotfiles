@@ -104,6 +104,7 @@ git init .
 git remote add -t \* -f origin git@github.com:cicloid/dotfiles.git
 git fetch origin
 git reset --hard origin/master
+git branch --set-upstream-to=origin/master master
 echo "Updating submodules"
 git submodule init
 git submodule update

@@ -8,16 +8,14 @@ brew 'bash'
 brew 'homebrew/dupes/grep', args: ['with-default-names']
 brew 'tree'
 brew 'heroku-toolbelt'
-brew 'vim', args: ['override-system-vi', 'luajit', 'lua', 'python3']
 brew 'fzf'
+brew 'z'
 brew 'ansible'
-brew 'heroku-toolbelt'
 brew 'glide'
 brew 'postgres'
 brew 'docker'
 brew 'docker-compose'
 brew 'dlite'
-brew 'codeclimate'
 brew 'nginx'
 brew 'wget'
 brew 'pow'
@@ -33,12 +31,14 @@ brew 'htop'
 # Programming languages
 brew 'lua'
 brew 'luajit'
+brew 'python3'
+
+brew 'vim', args: ['override-system-vi', 'luajit', 'lua', 'python3']
 brew 'go'
 brew 'node'
 
 brew 'rbenv'
 brew 'ruby-build'
-brew 'rbenv-gem-rehash'
 
 brew 'pyenv'
 brew 'pyenv-virtualenv'
@@ -63,7 +63,6 @@ brew 'youtube-dl'
 brew 'zeromq'
 
 
-brew 'brew-cask'
 cask_args appdir: '/Applications'
 
 # General
