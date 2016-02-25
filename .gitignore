@@ -1,5 +1,5 @@
 custom/zsh
-
+.DS_Store
 *vim/.vim/backups
 *vim/.vim/view
 *un~

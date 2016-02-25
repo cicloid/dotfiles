@@ -9,6 +9,7 @@ brew 'homebrew/dupes/grep', args: ['with-default-names']
 brew 'tree'
 brew 'heroku-toolbelt'
 brew 'fzf'
+brew 'direnv'
 brew 'z'
 brew 'ansible'
 brew 'glide'
