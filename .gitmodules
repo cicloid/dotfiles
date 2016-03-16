@@ -7,3 +7,6 @@
 [submodule "bitbar/plugins"]
 	path = bitbar/plugins
 	url = https://github.com/matryer/bitbar-plugins.git
+[submodule "tmux-powerline"]
+	path = tmux-powerline
+	url = https://github.com/erikw/tmux-powerline.git

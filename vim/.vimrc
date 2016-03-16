@@ -2,6 +2,12 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Just for NVIM
+if has('nvim')
+  let g:python3_host_prog = '/Users/cicloid/.pyenv/versions/3.5.1/bin/python'
+  let g:python_host_prog =  '/Users/cicloid/.pyenv/versions/2.7.11/bin/python2'
+endif
+
 " ================ General Config ====================
 
 set backspace=indent,eol,start  "Allow backspace in insert mode
