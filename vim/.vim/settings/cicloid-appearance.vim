@@ -31,8 +31,5 @@ if has("gui_running")
   else
     set guifont=Inconsolata\ XL:h17,Inconsolata:h20,Monaco:h17
   end
-else
-  "dont load csapprox if we no gui support - silences an annoying warning
-  let g:CSApprox_loaded = 1
 endif
 
