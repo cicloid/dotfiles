@@ -1,22 +1,21 @@
 " Make it beautiful - colors and fonts
-" http://ethanschoonover.com/solarized/vim-colors-solarized
+
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  set t_ut=
+endif
+
+
 set t_Co=256
 
 set textwidth=78
 execute "set colorcolumn=" . join(range(81,335), ',')
 
-hi ColorColumn guibg=#2d2d2d ctermbg=233
-
-colorscheme solarized
-set background=dark
-
-
 " Always show statusline even on single buffer
 set laststatus=2
 
 if has("gui_running")
-  "tell the term has 256 colors
-  set t_Co=256
 
   " Show tab number (useful for Cmd-1, Cmd-2.. mapping)
   " For some reason this doesn't work as a regular set command,
@@ -27,9 +26,17 @@ if has("gui_running")
   set columns=190
 
   if has("gui_gtk2")
-    set guifont=Inconsolata\ XL\ 12,Inconsolata\ 15,Monaco\ 12
+    s#2D2D2Det guifont=Inconsolata\ XL\ 12,Inconsolata\ 15,Monaco\ 12
   else
     set guifont=Inconsolata\ XL:h17,Inconsolata:h20,Monaco:h17
   end
 endif
 
+if has('termguicolors') && $TERM_PROGRAM ==# 'iTerm.app' && $TERM !~# '^\%(screen\|tmux\)'
+  set termguicolors
+  set termguicolors
+  colorscheme solarized8_light_high
+else
+  set notermguicolors
+  colorscheme solarized
+endif

@@ -1,3 +1,4 @@
+Plug 'lifepillar/vim-solarized8'
 Plug 'chrisbra/Colorizer'
 Plug 'skwp/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'

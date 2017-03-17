@@ -12,5 +12,6 @@ so ~/.vim/plugs/ruby.plugs
 so ~/.vim/plugs/search.plugs
 so ~/.vim/plugs/textobjects.plugs
 so ~/.vim/plugs/vim-improvements.plugs
+so ~/.vim/plugs/languages.plugs
 
 call plug#end()

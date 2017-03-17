@@ -13,7 +13,7 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Map standard Ctrl-N completion to Cmd-Space
-inoremap <D-Space> <C-n>
+inoremap <CR> <C-n>
 
 " This makes sure we use neocomplete completefunc instead of
 " the one in rails.vim, otherwise this plugin will crap out.

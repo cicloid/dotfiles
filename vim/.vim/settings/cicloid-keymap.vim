@@ -73,9 +73,6 @@ vmap ,{ c{<C-R>"}<ESC>
 
 map ,` ysiw`
 
-" gary bernhardt's hashrocket
-imap <c-l> <space>=><space>
-
 " reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
