@@ -1,6 +1,6 @@
 [user]
-  name = Gustavo Barron
-  email = cicloid@42fu.com
+	email = cicloid@42fu.com
+	name = Gustavo Barron
 [credential]
   helper = osxkeychain
 [difftool]
@@ -66,6 +66,8 @@
   ra = !git r --all
   l = "!. ~/.githelpers && pretty_git_log"
   la = !git l --all
+	fpush = "!git push -f origin \"$(git rev-parse --abbrev-ref HEAD)\""
+
 [push]
   default = matching
 [difftool "Kaleidoscope"]
