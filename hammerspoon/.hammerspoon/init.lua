@@ -1,3 +1,5 @@
+local log = hs.logger.new('init.lua', 'debug')
+
 -- Set up hotkey combinations
 local mash      = {"cmd", "alt", "ctrl"}
 local mashshift = {"cmd", "alt", "shift"}
@@ -9,40 +11,46 @@ hs.grid.GRIDWIDTH  = 12
 hs.grid.GRIDHEIGHT = 12
 hs.grid.MARGINX    = 0
 hs.grid.MARGINY    = 0
+
 -- Set window animation off. It's much smoother.
 hs.window.animationDuration = 0
 
+-- Use Control+` to reload Hammerspoon config
+hs.hotkey.bind({'ctrl'}, '`', nil, function()
+  hs.reload()
+end)
 
-
-
-
--- Modal ViM
-local function keyCode(key)
-  return function() hs.eventtap.keyStroke({}, key) end
+keyUpDown = function(modifiers, key)
+  -- Un-comment & reload config to log each keystroke that we're triggering
+  -- log.d('Sending keystroke:', hs.inspect(modifiers), key)
+  hs.eventtap.keyStroke(modifiers, key, 0)
 end
 
-hs.hotkey.bind({"cmd", "alt"}, 'h', keyCode('left') ,  nil,   keyCode('left'))
-hs.hotkey.bind({"cmd", "alt"}, 'j', keyCode('down') ,  nil,   keyCode('down') )
-hs.hotkey.bind({"cmd", "alt"}, 'k', keyCode('up')   ,  nil,   keyCode('up') )
-hs.hotkey.bind({"cmd", "alt"}, 'l', keyCode('right'),  nil,   keyCode('right') )
+-- Subscribe to the necessary events on the given window filter such that the
+-- given hotkey is enabled for windows that match the window filter and disabled
+-- for windows that don't match the window filter.
+--
+-- windowFilter - An hs.window.filter object describing the windows for which
+--                the hotkey should be enabled.
+-- hotkey       - The hs.hotkey object to enable/disable.
+--
+-- Returns nothing.
+enableHotkeyForWindowsMatchingFilter = function(windowFilter, hotkey)
+  windowFilter:subscribe(hs.window.filter.windowFocused, function()
+    hotkey:enable()
+  end)
 
-modalVimMode = hs.hotkey.modal.new({"cmd", "alt"}, '\\', "Vimificating")
-
-modalVimMode:bind({}, 'h', keyCode('left') ,  nil, keyCode('left')  )
-modalVimMode:bind({}, 'j', keyCode('down') ,  nil, keyCode('down')  )
-modalVimMode:bind({}, 'k', keyCode('up')   ,  nil, keyCode('up')    )
-modalVimMode:bind({}, 'l', keyCode('right'),  nil, keyCode('right') )
-
-function modalVimMode:exited()
-  -- hs.screen.primaryScreen():setGamma({alpha=1.0,red=0.0,green=0.0,blue=0.0},{blue=1.0,green=1.0,red=1.0})
-  hs.alert.show("No ViM mode")
+  windowFilter:subscribe(hs.window.filter.windowUnfocused, function()
+    hotkey:disable()
+  end)
 end
 
-modalVimMode:bind({}, 'escape', function() modalVimMode:exit() end)
+require('status-message')
+require('super')
+require('control-escape')
 
 -- Init modalWindowManager
 modalWindowManager = hs.hotkey.modal.new({"cmd", "alt"}, "`", "Entering Modal Mode")
-
 
 function modalWindowManager:entered()
   -- hs.screen.primaryScreen():setGamma({alpha=1.0,red=0.0,green=0.0,blue=0.0},{blue=0.5,green=0.5,red=0.5})
