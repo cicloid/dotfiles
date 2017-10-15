@@ -37,5 +37,5 @@ if has('termguicolors') && $TERM_PROGRAM ==# 'iTerm.app' && $TERM !~# '^\%(scree
   colorscheme solarized8_dark_high
 else
   set notermguicolors
-  colorscheme solarized
+  colorscheme solarized8_dark
 endif
