@@ -27,15 +27,8 @@ let g:ale_linters = {
       \ 'jsx': ['stylelint', 'eslint']
       \}
 
-" If emoji not loaded, use default sign
-try
-  let g:ale_sign_error = emoji#for('boom')
-  let g:ale_sign_warning = emoji#for('small_orange_diamond')
-catch
-  " Use same sign and distinguish error and warning via different colors.
-  let g:ale_sign_error = '•'
-  let g:ale_sign_warning = '•'
-endtry
+let g:ale_sign_error = '•'
+let g:ale_sign_warning = '•'
 let g:ale_echo_msg_format = '[#%linter%#] %s [%severity%]'
 let g:ale_statusline_format = ['E•%d', 'W•%d', 'OK']
 
@@ -43,5 +36,8 @@ let g:ale_statusline_format = ['E•%d', 'W•%d', 'OK']
 let g:ale_javascript_eslint_executable = 'eslint'
 let g:ale_javascript_eslint_use_global = 1
 
-
-let g:ale_sign_column_always = 1
+" Write this in your vimrc file
+let g:ale_lint_on_text_changed = 'never'
+" You can disable this option too
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 1

@@ -29,3 +29,5 @@ if [[ -s "/Userc/cicloid/.iterm2_shell_integrations.zsh" ]]; then
 fi
 
 
+
+export PATH="$HOME/.yarn/bin:$PATH"

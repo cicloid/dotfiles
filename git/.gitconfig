@@ -2,7 +2,7 @@
 	email = cicloid@42fu.com
 	name = Gustavo Barron
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 [difftool]
   prompt = false
 [mergetool]
