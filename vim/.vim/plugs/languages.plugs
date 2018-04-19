@@ -1,7 +1,3 @@
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
-Plug 'kannokanno/previm'
-Plug 'rodjek/vim-puppet'
 Plug 'skwp/vim-html-escape'
 Plug 'vim-scripts/sieve.vim'
 Plug 'w0rp/ale'

@@ -34,8 +34,8 @@ endif
 
 if has('termguicolors') && $TERM_PROGRAM ==# 'iTerm.app' && $TERM !~# '^\%(screen\|tmux\)'
   set termguicolors
-  colorscheme solarized8_dark_high
+  colorscheme solarized8_light_high
 else
   set notermguicolors
-  colorscheme solarized8_dark
+  colorscheme solarized8_light
 endif

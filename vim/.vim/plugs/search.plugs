@@ -1,5 +1,4 @@
 Plug 'justinmk/vim-sneak'
-Plug 'vim-scripts/IndexedSearch'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'skwp/greplace.vim'
 Plug 'skwp/vim-easymotion'

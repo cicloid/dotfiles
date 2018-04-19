@@ -11,6 +11,7 @@ let g:ale_linters = {
       \ 'javascript' : ['eslint'],
       \ 'jsx': ['stylelint', 'eslint']
       \}
+
 augroup FiletypeGroup
     autocmd!
     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
@@ -40,4 +41,4 @@ let g:ale_javascript_eslint_use_global = 1
 let g:ale_lint_on_text_changed = 'never'
 " You can disable this option too
 " if you don't want linters to run on opening a file
-let g:ale_lint_on_enter = 1
+let g:ale_lint_on_enter = 0

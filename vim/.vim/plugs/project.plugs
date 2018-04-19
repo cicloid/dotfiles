@@ -1,7 +1,6 @@
-Plug 'kien/ctrlp.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-projectionist'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
