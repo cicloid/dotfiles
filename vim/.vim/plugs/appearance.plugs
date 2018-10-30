@@ -10,3 +10,4 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'effkay/argonaut.vim'
 Plug 'raphamorim/lucario'
 Plug 'dracula/vim'
+Plug 'sonph/onehalf', {'rtp': 'vim' }

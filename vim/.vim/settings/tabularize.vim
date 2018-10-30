@@ -1,15 +1,15 @@
 " Tabularize {
 if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:<CR>
-  vmap <Leader>a: :Tabularize /:<CR>
-  nmap <Leader>a:: :Tabularize /:\zs<CR>
-  vmap <Leader>a:: :Tabularize /:\zs<CR>
-  nmap <Leader>a, :Tabularize /,<CR>
-  vmap <Leader>a, :Tabularize /,<CR>
-  nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-  vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+  nmap <Leader>tab= :Tabularize /=<CR>
+  vmap <Leader>tab= :Tabularize /=<CR>
+  nmap <Leader>tab: :Tabularize /:<CR>
+  vmap <Leader>tab: :Tabularize /:<CR>
+  nmap <Leader>tab:: :Tabularize /:\zs<CR>
+  vmap <Leader>tab:: :Tabularize /:\zs<CR>
+  nmap <Leader>tab, :Tabularize /,<CR>
+  vmap <Leader>tab, :Tabularize /,<CR>
+  nmap <Leader>tab<Bar> :Tabularize /<Bar><CR>
+  vmap <Leader>tab<Bar> :Tabularize /<Bar><CR>
 
   " The following function automatically aligns when typing a
   " supported character

@@ -22,7 +22,7 @@ if has("gui_running")
   " (the numbers don't show up) so I made it a VimEnter event
   autocmd VimEnter * set guitablabel=%N:\ %t\ %M
 
-  set lines=60
+  set lines=80
   set columns=190
 
   if has("gui_gtk2")
@@ -34,8 +34,15 @@ endif
 
 if has('termguicolors') && $TERM_PROGRAM ==# 'iTerm.app' && $TERM !~# '^\%(screen\|tmux\)'
   set termguicolors
-  colorscheme solarized8_light_high
+  " colorscheme solarized8_dark_high
 else
   set notermguicolors
-  colorscheme solarized8_light
 endif
+
+  colorscheme onehalfdark
+  let g:airline_theme='onehalfdark'
+
+" Show relative line numbers on all documents for movement
+autocmd InsertEnter * silent! :set norelativenumber
+autocmd InsertLeave,BufNewFile,VimEnter * silent! :set relativenumber
+

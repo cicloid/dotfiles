@@ -286,3 +286,48 @@ map <D-%> :so %<CR>
 " ,hp = html preview
 map <silent> ,hp :!open -a Safari %<CR><CR>
 
+
+" hit ,f to find the definition of the current class
+" this uses ctags. the standard way to get this is Ctrl-]
+nnoremap <silent> ,f <C-]>
+
+" use ,F to jump to tag in a vertical split
+nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
+
+
+" Automatically jump to a file at the correct line number
+" i.e. if your cursor is over /some/path.rb:50 then using 'gf' on it will take
+" you to that line
+" use ,gf to go to file in a vertical split
+nnoremap <silent> ,gf   :vertical botright wincmd F<CR>
+nnoremap <silent> <C-F> :vertical botright wincmd F<CR>
+
+" from http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+
+" Navigate to the block surrounding this one
+" For example if you're inside
+" foo do
+"    bar do
+"      # you are here
+"    end
+" end
+"
+" Then hitting ,orb ("outer ruby block") will take you to 'foo do'
+"
+" This is relying on the textobj-rubyblock which gives us 'ar' around ruby
+" and matchit.vim which gives us jumping to the matching 
+nnoremap <silent> ,orb :normal varar%<esc><esc>
+
+" CamelCaseMotion
+map W <Plug>CamelCaseMotion_w
+map B <Plug>CamelCaseMotion_b
+map E <Plug>CamelCaseMotion_e
+
+sunmap W
+sunmap B
+sunmap E
+
+
