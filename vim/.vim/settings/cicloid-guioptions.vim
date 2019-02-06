@@ -1,10 +1,7 @@
-" Disable the scrollbars (NERDTree)
-set guioptions-=r
-set guioptions-=L
+" add support for Mac clipboard
+set clipboard=unnamed
 
 " Disable the macvim toolbar
 set guioptions-=T
 
-" add support for Mac clipboard
-set clipboard=unnamed
 

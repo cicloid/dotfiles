@@ -1,4 +1,0 @@
-Plug 'skwp/vim-html-escape'
-Plug 'vim-scripts/sieve.vim'
-Plug 'w0rp/ale'
-Plug 'sheerun/vim-polyglot'

@@ -1,6 +1,0 @@
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
-Plug 'tpope/vim-projectionist'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'ctrlpvim/ctrlp.vim'

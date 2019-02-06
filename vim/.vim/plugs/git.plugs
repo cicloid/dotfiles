@@ -1,6 +1,0 @@
-Plug 'tpope/vim-git'
-Plug 'tpope/vim-fugitive'
-Plug 'mattn/gist-vim'
-Plug 'gregsexton/gitv'
-Plug 'tpope/vim-rhubarb'
-Plug 'airblade/vim-gitgutter'
