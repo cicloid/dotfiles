@@ -50,9 +50,9 @@ defaults write com.apple.finder NewWindowTarget PfHm
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Safari
-shell 'defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2'
-shell 'defaults write com.apple.Safari IncludeDebugMenu -bool true'
-shell 'defaults write com.apple.Safari ProxiesInBookmarksBar "()"'
+defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
+defaults write com.apple.Safari IncludeDebugMenu -bool true
+defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 
 #----------------------------------------------------------------------------------------------------------------
