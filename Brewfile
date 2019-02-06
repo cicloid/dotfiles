@@ -1,13 +1,11 @@
-tap 'homebrew/dupes'
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
 
 brew 'coreutils'
 brew 'bash'
-brew 'homebrew/dupes/grep', args: ['with-default-names']
+brew 'grep'
 brew 'tree'
-brew 'heroku-toolbelt'
 brew 'fzf'
 brew 'direnv'
 brew 'z'
@@ -60,7 +58,6 @@ brew 'unison'
 brew 'unrar'
 brew 'xz'
 brew 'ssh-copy-id'
-brew 'youtube-dl'
 brew 'zeromq'
 
 
@@ -68,7 +65,6 @@ cask_args appdir: '/Applications'
 
 # General
 cask '1password'
-cask 'transmit'
 cask 'alfred'
 cask 'vlc'
 cask 'dropbox'
@@ -81,8 +77,6 @@ cask 'rstudio'
 cask 'skype'
 cask 'sonos'
 cask 'spotify'
-cask 'telegram'
-cask 'unison'
 cask 'sketch'
 
 # UI
@@ -90,16 +84,12 @@ cask 'flux'
 cask 'inkscape'
 
 # Utilities
-cask 'transmission'
 cask 'paw'
-cask 'rescuetime'
-cask 'textexpander'
 cask 'little-snitch'
 cask 'audio-hijack'
 cask 'geektool'
 cask 'licecap'
 cask 'hammerspoon'
-cask 'teamviewer'
 cask 'bartender'
 cask 'handbrake'
 cask 'karabiner'
@@ -130,5 +120,3 @@ cask 'font-hack'
 cask 'postgres'
 cask 'postico'
 cask 'mactex'
-
-

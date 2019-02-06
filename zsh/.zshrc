@@ -1,7 +1,5 @@
 source ~/.zplug/init.zsh
 
-
-
 zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
 zplug "junegunn/fzf-bin", \
     from:gh-r, \
@@ -30,8 +28,9 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 
-
 zplug "rimraf/k"
+
+zplug "iam4x/zsh-iterm-touchbar", from:github
 
 
 # Install plugins if there are plugins that have not been installed
@@ -43,7 +42,7 @@ if ! zplug check --verbose; then
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+zplug load
 
 
 #####################################################################

@@ -67,6 +67,7 @@ path=(
   $path
   $GOPATH/bin
   ~/bin
+  ~/Library/Python/3.7/bin
   /Applications/Postgres.app/Contents/Versions/latest/bin
   /sbin
   /bin

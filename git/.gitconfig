@@ -85,7 +85,7 @@
 
 # Secrets from Git, removed from dotfiles for security
 [include]
-  path=/Users/cicloid/.gitconfig.secrets
+  path=~/.gitconfig.secrets
 
 [commit]
 	gpgsign = false
