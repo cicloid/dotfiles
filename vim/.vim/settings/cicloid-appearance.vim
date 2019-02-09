@@ -46,3 +46,4 @@ let g:airline_theme='onehalfdark'
 autocmd InsertEnter * silent! :set norelativenumber
 autocmd InsertLeave,BufNewFile,VimEnter * silent! :set relativenumber
 
+let g:indent_guides_enable_on_vim_startup = 1

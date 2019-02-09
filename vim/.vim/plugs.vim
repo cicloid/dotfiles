@@ -3,30 +3,19 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
 
-Plug 'airblade/vim-gitgutter'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'itchyny/lightline.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'junegunn/fzf.vim'
-Plug 'mattn/emmet-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-
 
 " Appearance
 "
-
 Plug 'keith/tmux.vim'
 Plug 'sonph/onehalf', {'rtp': 'vim' }
 Plug 'Yggdroot/indentLine'
+Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-vinegar'
 
 " Search
 "
+Plug 'junegunn/fzf.vim'
 Plug 'osyo-manga/vim-over'
 Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-hopping'
@@ -43,18 +32,45 @@ Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 
 " Project Management
 "
+Plug 'scrooloose/nerdtree'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'benmills/vimux'
 Plug 'skalnik/vim-vroom'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'tpope/vim-git'
+Plug 'airblade/vim-gitgutter'
 
 
 " Text editing
 "
-Plug 'junegunn/vim-easy-align'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'austintaylor/vim-indentobject'
+Plug 'bootleq/vim-textobj-rubysymbol'
+Plug 'coderifous/textobj-word-column.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-emoji'
+Plug 'kana/vim-textobj-datetime'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-function'
+Plug 'kana/vim-textobj-user'
+Plug 'lucapette/vim-textobj-underscore'
+Plug 'mattn/emmet-vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'terryma/vim-expand-region'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'thinca/vim-textobj-function-javascript'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/argtextobj.vim'
 
-
+" Ruby
+"
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
 
 " Initialize plugin system
 call plug#end()
