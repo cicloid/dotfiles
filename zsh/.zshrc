@@ -1,4 +1,5 @@
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
 zplug "junegunn/fzf-bin", \
