@@ -57,17 +57,25 @@ typeset -gU cdpath fpath mailpath path
 # cdpath=(
 #   $cdpath
 # )
+#
 
+
+### Go Stuff
+#
 export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+# export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  ~/bin
   /usr/local/{bin,sbin}
   /usr/local/opt/go/libexec/bin
-  $path
-  $GOPATH/bin
-  ~/bin
   ~/Library/Python/3.7/bin
+  $GOPATH/bin
+  $path
   /Applications/Postgres.app/Contents/Versions/latest/bin
   /sbin
   /bin
@@ -119,4 +127,11 @@ fi
 
 if [[ -s "$HOME/.zsh.custom" ]]; then
   . ~/.zsh.custom
+fi
+
+if [[ -f "$HOME/.okta/bash_functions" ]]; then
+    . "$HOME/.okta/bash_functions"
+fi
+if [[ -d "$HOME/.okta/bin" && ":$PATH:" != *":$HOME/.okta/bin:"* ]]; then
+    PATH="$HOME/.okta/bin:$PATH"
 fi

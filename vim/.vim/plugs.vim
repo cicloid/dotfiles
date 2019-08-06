@@ -40,6 +40,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-git'
 Plug 'airblade/vim-gitgutter'
+Plug 'vimwiki/vimwiki'
 
 
 " Text editing

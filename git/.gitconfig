@@ -7,15 +7,11 @@
   prompt = false
 [mergetool]
   prompt = false
-[diff]
-  tool = "Kaleidoscope"
-[merge]
-  tool = "Kaleidoscope"
 [color]
   ui = auto # covers diff = true, status = auto, branch = auto
   interactive = auto
 [core]
-  excludesfile = .git/gitignore
+	excludesfile = ~/.gitignore
   quotepath = false
   editor = vim
 [heroku]
@@ -86,6 +82,7 @@
 # Secrets from Git, removed from dotfiles for security
 [include]
   path=~/.gitconfig.secrets
+  path=~/.gitconfig.custom
 
 [commit]
 	gpgsign = false

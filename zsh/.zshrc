@@ -106,7 +106,10 @@ compdef _man w3mman
 compdef _tex platex
 
 # cd search path
-cdpath=($HOME)
+cdpath=(
+  $HOME/Work
+  $HOME
+)
 
 zstyle ':completion:*:processes' command "ps -u $USER -o pid,stat,%cpu,%mem,cputime,command"
 
@@ -438,3 +441,5 @@ zmodload zsh/mathfunc
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source ~/.iterm2_shell_integration.zsh
