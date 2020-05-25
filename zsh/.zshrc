@@ -425,6 +425,8 @@ r() {
 # others
 ######################################################################
 
+  source ~/.zsh.custom
+
 # Improve terminal title
 case "${TERM}" in
   kterm*|xterm*|vt100)

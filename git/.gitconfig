@@ -1,6 +1,3 @@
-[user]
-	email = cicloid@42fu.com
-	name = Gustavo Barron
 [credential]
 	helper = osxkeychain
 [difftool]
@@ -66,13 +63,7 @@
 
 [push]
   default = matching
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
 [ghi]
 	editor = vim
 	token = !security find-internet-password -a cicloid -s github.com -l 'ghi token' -w
