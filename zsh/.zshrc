@@ -2,6 +2,7 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
+
 zplug "junegunn/fzf-bin", \
   from:gh-r, \
   as:command, \
@@ -12,7 +13,6 @@ zplug "stedolan/jq", \
   from:gh-r, \
   as:command, \
   rename-to:jq
-
 zplug "b4b4r07/emoji-cli", \
   on:"stedolan/jq"
 
@@ -22,14 +22,11 @@ zplug 'modules/utility', from:prezto
 zplug 'modules/osx', from:prezto
 zplug 'modules/git', from:prezto
 zplug 'modules/editor', from:prezto
-zplug "modules/prompt", from:prezto
-zstyle ':prezto:module:prompt' theme 'sorin'
 
 zplug "plugins/vi-mode",   from:oh-my-zsh
 
 zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 
@@ -37,6 +34,11 @@ zplug "rimraf/k"
 
 zplug "iam4x/zsh-iterm-touchbar", from:github
 
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+zplug 'dracula/zsh', as:theme
 
 # Install plugins if there are plugins that have not been installed
 #
@@ -47,7 +49,10 @@ if ! zplug check --verbose; then
   fi
 fi
 
+
 # Then, source plugins and add commands to $PATH
+#
+#
 zplug load
 
 
@@ -107,11 +112,11 @@ compdef _tex platex
 
 # cd search path
 cdpath=(
-  $HOME/Work
   $HOME
 )
 
 zstyle ':completion:*:processes' command "ps -u $USER -o pid,stat,%cpu,%mem,cputime,command"
+
 
 
 ######################################################################
@@ -443,3 +448,7 @@ zmodload zsh/mathfunc
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source ~/.iterm2_shell_integration.zsh
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+export GOPRIVATE="*"
+
