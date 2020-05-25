@@ -39,8 +39,8 @@ else
   set notermguicolors
 endif
 
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+colorscheme solarized8_high
+let g:airline_theme='solarized8_high'
 
 " Show relative line numbers on all documents for movement
 autocmd InsertEnter * silent! :set norelativenumber

@@ -10,3 +10,6 @@
 [submodule "tmux-powerline"]
 	path = tmux-powerline
 	url = https://github.com/erikw/tmux-powerline.git
+[submodule "hammerspoon/.hammerspoon/Spoons/VimMode.spoon"]
+	path = hammerspoon/.hammerspoon/Spoons/VimMode.spoon
+	url = https://github.com/dbalatero/VimMode.spoon

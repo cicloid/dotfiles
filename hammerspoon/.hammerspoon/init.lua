@@ -1,3 +1,8 @@
+-- Require hack for old Control-Escape as a escape for machines with touchbar
+require('control-escape')
+
+require('status-message')
+
 local log = hs.logger.new('init.lua', 'debug')
 
 -- Set up hotkey combinations
@@ -45,9 +50,6 @@ enableHotkeyForWindowsMatchingFilter = function(windowFilter, hotkey)
   end)
 end
 
-require('status-message')
-require('super')
-require('control-escape')
 
 -- Init modalWindowManager
 modalWindowManager = hs.hotkey.modal.new({"cmd", "alt"}, "`", "Entering Modal Mode")
@@ -161,5 +163,16 @@ end)
 modalWindowManager:bind({}, '`', function() modalWindowManager:exit() end)
 modalWindowManager:bind({}, 'escape', function() modalWindowManager:exit() end)
 
+
+local VimMode = hs.loadSpoon('VimMode')
+local vim = VimMode:new()
+
+vim
+  :disableForApp('Code')
+  :disableForApp('MacVim')
+  :disableForApp('zoom.us')
+  :enterWithSequence('jk')
+
 -- alert_sound:play()
 hs.alert.show("Stop, Hammer time!", 3)
+
