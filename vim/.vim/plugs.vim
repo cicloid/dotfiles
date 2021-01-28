@@ -30,6 +30,12 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 
+" RUBY LSP
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
 " Project Management
 "
 Plug 'scrooloose/nerdtree'
@@ -66,6 +72,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/argtextobj.vim'
+Plug 'pedrohdz/vim-yaml-folds'
+Plug 'tomtom/tcomment_vim'
 
 " Ruby
 "

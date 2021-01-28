@@ -1,5 +1,3 @@
-
-
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_command_wrapper = 'nice -n5 %*'
@@ -18,3 +16,6 @@ autocmd BufRead,BufNewFile *.tf.tt set filetype=terraform
 "     augroup END
 "   endif
 
+let g:ale_linters = {
+	\ 'go': ['gopls'],
+	\}

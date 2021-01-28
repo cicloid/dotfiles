@@ -54,10 +54,10 @@ fi
 typeset -gU cdpath fpath mailpath path
 
 # Set the the list of directories that cd searches.
-# cdpath=(
-#   $cdpath
-# )
-#
+cdpath=(
+  $cdpath
+ )
+
 
 
 ### Go Stuff
@@ -108,8 +108,9 @@ fi
 TMPPREFIX="${TMPDIR%/}/zsh"
 
 # Ruby RBENV
-export RBENV_ROOT=/usr/local/var/rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 if [[ -s `brew --prefix`/etc/profile.d/z.sh ]]; then
 	. `brew --prefix`/etc/profile.d/z.sh
