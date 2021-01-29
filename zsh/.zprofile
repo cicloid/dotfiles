@@ -112,6 +112,10 @@ if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
+if [[ -f /usr/local/opt/asdf/asdf.sh ]]; then
+  . /usr/local/opt/asdf/asdf.sh
+fi
+
 if [[ -s `brew --prefix`/etc/profile.d/z.sh ]]; then
 	. `brew --prefix`/etc/profile.d/z.sh
 fi
