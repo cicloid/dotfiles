@@ -164,17 +164,16 @@ modalWindowManager:bind({}, '`', function() modalWindowManager:exit() end)
 modalWindowManager:bind({}, 'escape', function() modalWindowManager:exit() end)
 
 
--- local VimMode = hs.loadSpoon('VimMode')
--- local vim = VimMode:new()
+local VimMode = hs.loadSpoon('VimMode')
+local vim = VimMode:new()
 
--- vim
--- :disableForApp('Code')
--- :disableForApp('MacVim')
--- :disableForApp('VIM')
--- :disableForApp('zoom.us')
--- :disableForApp('iTerm')
--- :enterWithSequence('jk')
+vim
+  :disableForApp('Code')
+  :disableForApp('MacVim')
+  :disableForApp('VIM')
+  :disableForApp('zoom.us')
+  :disableForApp('Alacritty')
+  :disableForApp('iTerm')
+  :enterWithSequence('jk')
 
 -- alert_sound:play()
-hs.alert.show("Stop, Hammer time!", 3)
-

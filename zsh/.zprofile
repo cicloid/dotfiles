@@ -56,7 +56,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the the list of directories that cd searches.
 cdpath=(
   $cdpath
- )
+)
 
 
 
@@ -72,11 +72,8 @@ export PATH=$PATH:$GOROOT/bin
 path=(
   ~/bin
   /usr/local/{bin,sbin}
-  /usr/local/opt/go/libexec/bin
-  ~/Library/Python/3.7/bin
   $GOPATH/bin
   $path
-  /Applications/Postgres.app/Contents/Versions/latest/bin
   /sbin
   /bin
 )
@@ -90,11 +87,11 @@ path=(
 # Remove -X and -F (exit if the content fits on one screen) to enable it.
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 
-# Set the Less input preprocessor.
-# Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
-if (( $#commands[(i)lesspipe(|.sh)] )); then
-  export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
-fi
+# # Set the Less input preprocessor.
+# # Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
+# if (( $#commands[(i)lesspipe(|.sh)] )); then
+#   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
+# fi
 
 #
 # Temporary Files
@@ -107,40 +104,20 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
-# Ruby RBENV
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
-
 if [[ -f /usr/local/opt/asdf/asdf.sh ]]; then
   . /usr/local/opt/asdf/asdf.sh
 fi
 
-if [[ -s `brew --prefix`/etc/profile.d/z.sh ]]; then
+if [[ -s /usr/local/etc/profile.d/z.sh ]]; then
 	. `brew --prefix`/etc/profile.d/z.sh
 fi
 
-if which direnv > /dev/null; then
-	eval "$(direnv hook zsh)"
-fi
-
-alias dokku='$HOME/.dokku/contrib/dokku_client.sh'
-
 if [[ -s "$HOME/.homebrewrc" ]]; then
-  . ~/.homebrewrc
+   . ~/.homebrewrc
 fi
 
 if [[ -s "$HOME/.zsh.custom" ]]; then
   . ~/.zsh.custom
 fi
 
-if [[ -f "$HOME/.okta/bash_functions" ]]; then
-    . "$HOME/.okta/bash_functions"
-fi
-if [[ -d "$HOME/.okta/bin" && ":$PATH:" != *":$HOME/.okta/bin:"* ]]; then
-    PATH="$HOME/.okta/bin:$PATH"
-fi
-
-export TF_PLUGIN_CACHE_DIR=$HOME/.terraform.d/cache/
-
-export PATH="$HOME/.cargo/bin:$PATH"
+export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"

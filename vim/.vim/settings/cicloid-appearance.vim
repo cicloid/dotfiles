@@ -7,6 +7,12 @@ if &term =~ '256color'
 endif
 
 
+if &term =~ 'alacritty'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  set t_ut=
+endif
+
 set t_Co=256
 
 set textwidth=78
@@ -32,15 +38,15 @@ if has("gui_running")
   end
 endif
 
-if has('termguicolors') && $TERM_PROGRAM ==# 'iTerm.app' && $TERM !~# '^\%(screen\|tmux\)'
+colorscheme solarized8_high
+let g:airline_theme='solarized8_high'
+
+if has('termguicolors') && $TERM !~# '^\%(screen\|tmux\)'
   set termguicolors
-  " colorscheme solarized8_dark_high
+  colorscheme solarized8_high
 else
   set notermguicolors
 endif
-
-colorscheme solarized8_high
-let g:airline_theme='solarized8_high'
 
 " Show relative line numbers on all documents for movement
 autocmd InsertEnter * silent! :set norelativenumber

@@ -1,50 +1,48 @@
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+source "${ZINIT_HOME}/zinit.zsh"
 
-zmodload zsh/mathfunc
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
+zinit ice from"gh-r" as"program"
+zinit light junegunn/fzf
 
-# zplug "raylee/tldr", from:github, as:command, use:"tldr"
-# zplug "rimraf/k"
-# zplug "iam4x/zsh-iterm-touchbar", from:github
-zplug "junegunn/fzf-bin", \
-    from:gh-r, \
-    as:command, \
-    rename-to:fzf, \
-    use:"*darwin*amd64*", \
-    if:"[[ $OSTYPE == *darwin* ]]"
+# Load starship theme
+zinit ice as"command" from"gh-r" \
+          atclone"starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
 
-zplug "sharkdp/fd", from:gh-r, \
-  as:command, \
-  rename-to:fd, \
-  use:"*darwin*", \
-  if:"[[ $OSTYPE == *darwin* ]]"
 
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:2
+zinit ice wait"2" # load after 2 seconds
+zinit snippet OMZP::rbenv
 
-zplug 'modules/utility', from:prezto, lazy:yes
-zplug 'modules/osx', from:prezto, lazy:yes
-zplug 'modules/git', from:prezto
-zplug 'modules/editor', from:prezto
+zinit ice wait"2" # load after 2 seconds
+zinit snippet OMZP::ruby
 
-zplug "plugins/vi-mode",   from:oh-my-zsh, defer:1
-zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]", defer:2
+zinit load zdharma-continuum/history-search-multi-word
+zinit light zsh-users/zsh-history-substring-search
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma-continuum/fast-syntax-highlighting
 
-# Can manage local plugins
-zplug "~/.zsh", from:local, defer:2
-zplug "~/.zsh.w", from:local, defer:2
 
-zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme, defer:2
+zinit snippet OMZL::clipboard.zsh
+zinit snippet PZTM::utility
+zinit snippet PZTM::osx
+zinit snippet PZTM::editor
+zinit snippet OMZP::vi-mode
 
-# # Install plugins if there are plugins that have not been installed
-# if ! zplug check --verbose; then
-#     printf "Install? [y/N]: "
-#     if read -q; then
-#         echo; zplug install
-#     fi
-# fi
+zinit snippet PZT::/modules/git/alias.zsh
 
-# Then, source plugins and add commands to $PATH
-zplug load
+zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
+    atpull'%atclone' pick"direnv" src"zhook.zsh" for \
+        direnv/direnv
+
+for file in ${HOME}/.zsh/*.zsh; do
+  source $file
+done
+
+zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
+    zsh-users/zsh-completions
+
+export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"

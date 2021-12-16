@@ -70,9 +70,9 @@ alias du="du -h"
 alias df="df -h"
 
 # Improve od for hexdump
-  alias od='od -Ax -tx1z'
-  alias hexdump='hexdump -C'
-  alias hexd=hexdump
+alias od='od -Ax -tx1z'
+alias hexdump='hexdump -C'
+alias hexd=hexdump
 
 # Better where
 alias where="command -v"

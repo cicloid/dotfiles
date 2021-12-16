@@ -101,7 +101,7 @@ unsetopt hist_verify
 # Share zsh histories
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=10000
-SAVEHIST=50000
+SAVEHIST=80000
 setopt inc_append_history
 setopt share_history
 

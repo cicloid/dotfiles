@@ -3,14 +3,6 @@
 # completions
 #####################################################################
 
-zplug "zsh-users/zsh-completions", defer:3, lazy:true
-
-# Enable completions
-if [ -d ~/.zsh/comp ]; then
-  fpath=(~/.zsh/comp $fpath)
-  autoload -U ~/.zsh/comp/*(:t)
-fi
-
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*:descriptions' format '%d'
