@@ -64,13 +64,12 @@ cdpath=(
 #
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-# export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
 
 # Set the list of directories that Zsh searches for programs.
 path=(
   ~/bin
+  /opt/homebrew/bin
+  /opt/homebrew/sbin
   /usr/local/{bin,sbin}
   $GOPATH/bin
   $path
@@ -119,5 +118,7 @@ fi
 if [[ -s "$HOME/.zsh.custom" ]]; then
   . ~/.zsh.custom
 fi
+
+source $HOME/.cargo/env
 
 export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
