@@ -1,111 +1,87 @@
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
-
-brew 'coreutils'
-brew 'bash'
-brew 'grep'
-brew 'tree'
-brew 'fzf'
-brew 'direnv'
-brew 'z'
-brew 'ansible'
-brew 'glide'
-brew 'postgres'
-brew 'dlite'
-brew 'nginx'
-brew 'wget'
-brew 'pow'
-brew 'redis'
-brew 'memcached'
-brew 'the_silver_searcher'
-brew 'hub'
-brew 'tmux'
-brew 'reattach-to-user-namespace'
-brew 'ctags'
-brew 'htop'
-
-# Programming languages
-brew 'lua'
-brew 'luajit'
-brew 'python3'
-
-brew 'vim', args: ['override-system-vi', 'luajit', 'lua', 'python3']
-brew 'go'
-brew 'node'
-
-brew 'rbenv'
-brew 'ruby-build'
-
-brew 'pyenv'
-brew 'pyenv-virtualenv'
-brew 'pyenv-virtualenvwrapper'
-
-brew 'carthage'
-
-brew 'elixir'
-brew 'elm'
-brew 'curl'
-brew 'exercism'
-
-# tools
-brew 'switchaudio-osx'
-brew 'axel'
-brew 'lesspipe'
-brew 'unison'
-brew 'unrar'
-brew 'xz'
-brew 'ssh-copy-id'
-brew 'zeromq'
-
-
-cask_args appdir: '/Applications'
-
-# General
-cask '1password'
-cask 'alfred'
-cask 'vlc'
-cask 'omnifocus'
-cask 'omnigraffle'
-cask 'rstudio'
-cask 'skype'
-cask 'spotify'
-cask 'sketch'
-
-# UI
-cask 'flux'
-cask 'inkscape'
-
-# Utilities
-cask 'paw'
-cask 'audio-hijack'
-cask 'geektool'
-cask 'licecap'
-cask 'hammerspoon'
-cask 'bartender'
-cask 'bitbar'
-
-# Added Quicklook addons
-cask 'betterzipql'
-cask 'qlcolorcode'
-cask 'qlmarkdown'
-cask 'qlstephen'
-cask 'quicklook-json'
-cask 'suspicious-package'
-cask 'bitbar'
-cask 'licecap'
-cask 'qlimagesize'
-cask 'qlprettypatch'
-cask 'quicklook-csv'
-cask 'soundcloud-downloader'
-cask 'webpquicklook'
-
-# Development
-cask 'iterm2'
-cask 'atom'
-cask 'vagrant'
-cask 'virtualbox'
-cask 'gitup'
-cask 'font-hack'
-cask 'postgres'
-cask 'postico'
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "timberio/brew"
+brew "webp"
+brew "xz"
+brew "jpeg-xl"
+brew "aom"
+brew "asdf"
+brew "glib"
+brew "cmake"
+brew "cmocka"
+brew "ctags"
+brew "fd"
+brew "p11-kit"
+brew "unbound"
+brew "gnutls"
+brew "harfbuzz"
+brew "little-cms2"
+brew "leptonica"
+brew "libarchive"
+brew "libass"
+brew "libbluray"
+brew "srt"
+brew "tesseract"
+brew "ffmpeg", link: false
+brew "git"
+brew "gnupg"
+brew "go"
+brew "gobject-introspection"
+brew "htop"
+brew "openssl@3"
+brew "iperf3"
+brew "jack", restart_service: true
+brew "jq"
+brew "k3sup"
+brew "mbedtls@2"
+brew "mplayer"
+brew "neovim"
+brew "nghttp2"
+brew "node"
+brew "nzbget"
+brew "pipenv"
+brew "pipx"
+brew "pyenv"
+brew "qemu"
+brew "qt@5"
+brew "rtorrent"
+brew "ruby"
+brew "sevenzip"
+brew "starship"
+brew "stow"
+brew "subversion"
+brew "swig"
+brew "terraform"
+brew "the_silver_searcher"
+brew "tmux"
+brew "tree"
+brew "unar"
+brew "vim"
+brew "wget"
+brew "youtube-dl"
+brew "yt-dlp"
+brew "zinit"
+brew "zlib"
+brew "zplug"
+brew "akeru-inc/tap/xcnotary"
+brew "timberio/brew/vector", link: false
+cask "alfred"
+cask "audio-hijack"
+cask "bitbar"
+cask "font-hack-nerd-font"
+cask "font-sauce-code-pro-nerd-font"
+cask "font-source-code-pro"
+cask "hammerspoon"
+cask "iterm2"
+cask "macvim"
+cask "omnifocus"
+cask "omnigraffle"
+cask "openscad"
+cask "rar"
+cask "skype"
+cask "spotify"
+cask "transmit"
+cask "vlc"
