@@ -31,12 +31,6 @@ Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 Plug 'davidhalter/jedi-vim'
 
-" RUBY LSP
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
 " Project Management
 "
 Plug 'scrooloose/nerdtree'

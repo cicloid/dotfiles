@@ -29,8 +29,8 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # NEOVIM
-zinit ice from"gh-r" as"program" bpick"*appimage*" ver"nightly" mv"nvim* -> nvim" pick"nvim"
-zinit light neovim/neovim
+# zinit ice from"gh-r" as"program" bpick"*appimage*" ver"nightly" mv"nvim* -> nvim" pick"nvim"
+# zinit light neovim/neovim
 
 # RIPGREP
 zinit ice from"gh-r" as"program" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
@@ -99,5 +99,10 @@ setopt vi
 eval "$(starship init zsh)"
 
 ### End of Zinit's installer chunk
+#
+#
+alias n="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
