@@ -131,6 +131,7 @@ pushd $HOME/dotfiles
   stow hammerspoon
   stow homebrew
   stow git
+  stow herdr
   stow node
   stow ruby
   stow scripts

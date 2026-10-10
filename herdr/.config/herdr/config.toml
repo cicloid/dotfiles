@@ -1,0 +1,116 @@
+# herdr configuration — ported from ~/dotfiles/tmux/.tmux.conf
+# Symlinked to ~/.config/herdr/config.toml (only this file; that dir also holds
+# herdr's sockets, logs and session state, which stay out of the repo).
+# Reload with `prefix r` or `herdr server reload-config`.
+# Full reference: `herdr --default-config`
+
+onboarding = false
+
+# ---------------------------------------------------------------------------
+# Look & feel. tmux used the terminal's own palette with a light status bar,
+# colour39 (#00afff) for the active pane border, colour245 (#8a8a8a) for
+# inactive borders and colour221 (#ffd75f) for messages.
+# ---------------------------------------------------------------------------
+[theme]
+name = "terminal"
+
+[theme.custom]
+panel_bg = "reset"
+accent = "#00afff"
+yellow = "#ffd75f"
+
+[terminal]
+# tmux: set -g default-shell $SHELL (empty means $SHELL)
+default_shell = ""
+
+[keys]
+# tmux: unbind C-b; set -g prefix C-a
+# Pressing ctrl+a twice sends a literal ctrl+a (tmux: bind a send-prefix).
+prefix = "ctrl+a"
+
+# tmux: bind-key ^D detach-client (plus the stock `d`)
+detach = ["prefix+d", "prefix+ctrl+d"]
+
+# tmux: bind-key r source-file ~/.tmux.conf
+reload_config = "prefix+r"
+# resize mode moves off `r` (it was herdr's default there)
+resize_mode = "prefix+shift+r"
+
+# tmux: v / ^V / \ / | -> split-window -h (side by side)
+split_vertical = ["prefix+v", "prefix+ctrl+v", "prefix+backslash", "prefix+|"]
+# tmux: s / ^S / - -> split-window -v (stacked)
+split_horizontal = ["prefix+s", "prefix+ctrl+s", "prefix+minus"]
+# `s` was herdr's settings key; moved to S
+settings = "prefix+shift+s"
+
+# tmux-pain-control: prefix h/j/k/l moves between panes (herdr defaults)
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+# Navigate mode (prefix w): plain j/k move between workspaces; arrows still
+# work. Pane up/down moves to ctrl+j/k; h/l and left/right stay on panes.
+navigate_workspace_up = ["up", "k"]
+navigate_workspace_down = ["down", "j"]
+navigate_pane_left = "h"
+navigate_pane_down = "ctrl+j"
+navigate_pane_up = "ctrl+k"
+navigate_pane_right = "l"
+
+# tmux: last-pane on `;`
+last_pane = "prefix+semicolon"
+
+# tmux: bind-key -r H/J/K/L resize-pane
+resize_pane_left = "prefix+shift+h"
+resize_pane_down = "prefix+shift+j"
+resize_pane_up = "prefix+shift+k"
+resize_pane_right = "prefix+shift+l"
+
+# tmux: bind C-k send-keys C-l \; clear-history
+# Moved to C-l so C-j/C-k can walk the agent list.
+clear_pane = "prefix+ctrl+l"
+
+# Move across agents in the sidebar's agent panel, vim-style
+next_agent = "prefix+ctrl+j"
+previous_agent = "prefix+ctrl+k"
+
+# tmux windows -> herdr tabs (c / n / p / 1..9 / , / & like tmux)
+new_tab = "prefix+c"
+next_tab = "prefix+n"
+previous_tab = "prefix+p"
+switch_tab = "prefix+1..9"
+rename_tab = ["prefix+comma", "prefix+shift+t"]
+close_tab = ["prefix+ampersand", "prefix+shift+x"]
+close_pane = "prefix+x"
+zoom = "prefix+z"
+
+# tmux: copy-mode on `[` (vi keys)
+copy_mode = "prefix+["
+
+# tmux sessions -> herdr workspaces (w = chooser, $ = rename)
+workspace_picker = "prefix+w"
+rename_workspace = ["prefix+$", "prefix+shift+w"]
+
+# tmux-osx: bind C-o run-shell "open $(tmux show-buffer)"
+[[keys.command]]
+key = "prefix+ctrl+o"
+type = "shell"
+command = "open \"$(pbpaste)\""
+
+[ui]
+# tmux: status line at the bottom, no outer frame, thin splitters
+tab_bar_position = "bottom"
+pane_outer_borders = false
+pane_gaps = false
+pane_scrollbars = false
+# tmux: `c` makes a window straight away
+prompt_new_tab_name = false
+# tmux: set -g mouse on / tmux-yank copies the selection
+mouse_capture = true
+copy_on_select = true
+accent = "#00afff"
+# tmux-powerline right side: hostname and date/time
+tab_bar_right = [
+  { type = "hostname" },
+  { type = "datetime" },
+]
