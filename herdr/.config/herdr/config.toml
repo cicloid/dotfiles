@@ -114,3 +114,15 @@ tab_bar_right = [
   { type = "hostname" },
   { type = "datetime" },
 ]
+
+# "Copied to clipboard" popup: top-center instead of bottom-center
+[ui.toast.clipboard]
+position = "top-center"
+
+# Agent sidebar: show Claude's session name (Claude Code writes it into the
+# terminal title, e.g. after /rename) with the agent label dimmed beside it.
+[ui.sidebar.agents.rows_by_agent]
+claude = [
+  ["state_icon", "machine", "workspace", "tab"],
+  ["terminal_title_stripped", { token = "agent", dim = true }],
+]
