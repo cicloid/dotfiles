@@ -73,6 +73,8 @@ clear_pane = "prefix+ctrl+l"
 # Move across agents in the sidebar's agent panel, vim-style
 next_agent = "prefix+ctrl+j"
 previous_agent = "prefix+ctrl+k"
+# Jump straight to agent row N in the agent panel
+focus_agent = "prefix+alt+1..9"
 
 # tmux windows -> herdr tabs (c / n / p / 1..9 / , / & like tmux)
 new_tab = "prefix+c"
@@ -114,6 +116,14 @@ tab_bar_right = [
   { type = "hostname" },
   { type = "datetime" },
 ]
+# Agent panel as an attention queue (blocked, then done, first) with a
+# distinct glyph per state instead of coloured dots
+agent_panel_sort = "priority"
+status_indicators = "symbols"
+
+# macOS notifications when a background agent finishes or needs input
+[ui.toast]
+delivery = "system"
 
 # "Copied to clipboard" popup: top-center instead of bottom-center
 [ui.toast.clipboard]
@@ -121,8 +131,12 @@ position = "top-center"
 
 # Agent sidebar: show Claude's session name (Claude Code writes it into the
 # terminal title, e.g. after /rename) with the agent label dimmed beside it.
+# The Claude statusline script (~/.claude/statusline-command.sh) reports:
+# $model (F/O/S/H), $ctx (context fill) and $cache (prompt-cache expiry time,
+# dropped by herdr once the cache is cold).
 [ui.sidebar.agents.rows_by_agent]
 claude = [
   ["state_icon", "machine", "workspace", "tab"],
-  ["terminal_title_stripped", { token = "agent", dim = true }],
+  [{ token = "$model", bold = true }, "terminal_title_stripped", { token = "agent", dim = true }],
+  [{ token = "$ctx", dim = true }, { token = "$cache", dim = true }],
 ]
