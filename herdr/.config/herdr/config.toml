@@ -12,8 +12,9 @@ onboarding = false
 # inactive borders and colour221 (#ffd75f) for messages.
 # ---------------------------------------------------------------------------
 [theme]
-name = "terminal"
+name = "kanagawa"
 
+auto_switch = false
 [theme.custom]
 panel_bg = "reset"
 accent = "#00afff"
